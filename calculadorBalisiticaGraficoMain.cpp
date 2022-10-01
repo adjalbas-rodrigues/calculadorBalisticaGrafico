@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 
+#include "boletins.h"
 #include "calculadorBalisiticaGraficoMain.h"
 #include "globais.h"
 #include "ConfiguracoesGeraisDialog.h"
@@ -18,6 +19,7 @@
 #include "deletarFatoresDialog.h"
 #include "projetilCoeficientesDialog.h"
 #include "minhaPrintout.h"
+#include "boletimSTANAG4061Dialog.h"
 #include "tabelaDialog/tabelaDialog.h"
 #include "tabelaDialog/geradorTabular.h"
 #include "tabelaDialog/geradorTabularA.h"
@@ -49,8 +51,10 @@
 #include <wx/sizer.h>
 #include <wx/aboutdlg.h>
 #include <wx/valnum.h>
-#include <wx/valnum.h>
+#include <iostream>
+#include <sstream>
 
+#include <vector>
 //(*InternalHeaders(calculadorBalisiticaGraficoFrame)
 #include <wx/bitmap.h>
 #include <wx/font.h>
@@ -122,6 +126,9 @@ const long calculadorBalisiticaGraficoFrame::ID_STATICTEXT_ANGULO_INICIAL = wxNe
 const long calculadorBalisiticaGraficoFrame::ID_TEXTCTRL_ANGULO_INICIAL = wxNewId();
 const long calculadorBalisiticaGraficoFrame::ID_STATICTEXT_ANGULO_INICIAL_UNIDADE = wxNewId();
 const long calculadorBalisiticaGraficoFrame::ID_PANEL_PLOT = wxNewId();
+const long calculadorBalisiticaGraficoFrame::ID_NEW_BD = wxNewId();
+const long calculadorBalisiticaGraficoFrame::ID_MenuBoletimCarregarBD = wxNewId();
+const long calculadorBalisiticaGraficoFrame::ID_MENUITEM1 = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idSubMenuPjt105 = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idSubMenuPjt155M107 = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idSubMenuPjt155M483E1 = wxNewId();
@@ -133,9 +140,9 @@ const long calculadorBalisiticaGraficoFrame::idMenuSair = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuCalculoDireto = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuCalculoReverso = wxNewId();
 const long calculadorBalisiticaGraficoFrame::ID_MENUITEM_ALCANCE_MAXIMO = wxNewId();
-const long calculadorBalisiticaGraficoFrame::idMenuFatoresDeAjuste = wxNewId(); //linha editada
-const long calculadorBalisiticaGraficoFrame::idSubMenuInserirFatores = wxNewId(); //edi
-const long calculadorBalisiticaGraficoFrame::idSubMenuDeletarFatores = wxNewId(); //edi
+const long calculadorBalisiticaGraficoFrame::idSubMenuInserirFatores = wxNewId();
+const long calculadorBalisiticaGraficoFrame::idSubMenuDeletarFatores = wxNewId();
+const long calculadorBalisiticaGraficoFrame::idMenuFatoresDeAjuste = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaA = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaB = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaC = wxNewId();
@@ -145,6 +152,8 @@ const long calculadorBalisiticaGraficoFrame::idMenuTabelaF = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaG = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaH = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuTabelaI = wxNewId();
+const long calculadorBalisiticaGraficoFrame::ID_MenuBoletimSTANAG4061 = wxNewId();
+const long calculadorBalisiticaGraficoFrame::ID_MENUITEM2 = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuSobre = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuInfo = wxNewId();
 const long calculadorBalisiticaGraficoFrame::idMenuCreditos = wxNewId();
@@ -210,36 +219,36 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     notebookGraficos = new wxNotebook(plotPanel, ID_NOTEBOOK1, wxPoint(150,104), wxSize(945,424), 0, _T("ID_NOTEBOOK1"));
     wxFont notebookGraficosFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Sans"),wxFONTENCODING_DEFAULT);
     notebookGraficos->SetFont(notebookGraficosFont);
-    mathPlotPrincipal = new mpWindow(notebookGraficos, ID_MATHPLOT_PRINCIPAL, wxDefaultPosition, wxSize(-1,-1), wxSIMPLE_BORDER);
+    mathPlotPrincipal = new mpWindow(notebookGraficos, ID_MATHPLOT_PRINCIPAL, wxDefaultPosition, wxSize(-1,-1), wxBORDER_SIMPLE);
     wxFont mathPlotPrincipalFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     mathPlotPrincipal->SetFont(mathPlotPrincipalFont);
     mathPlotPrincipal->UpdateAll();
     mathPlotPrincipal->Fit();
-    mathPlotDerivacao = new mpWindow(notebookGraficos, ID_MATHPLOT_DESVIO, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotDerivacao = new mpWindow(notebookGraficos, ID_MATHPLOT_DESVIO, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     wxFont mathPlotDerivacaoFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     mathPlotDerivacao->SetFont(mathPlotDerivacaoFont);
     mathPlotDerivacao->UpdateAll();
     mathPlotDerivacao->Fit();
-    mathPlotVelocidade = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotVelocidade = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     wxFont mathPlotVelocidadeFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     mathPlotVelocidade->SetFont(mathPlotVelocidadeFont);
     mathPlotVelocidade->UpdateAll();
     mathPlotVelocidade->Fit();
-    mathPlotAlcance = new mpWindow(notebookGraficos, ID_MATHPLOT_ALCANCE, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotAlcance = new mpWindow(notebookGraficos, ID_MATHPLOT_ALCANCE, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     wxFont mathPlotAlcanceFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     mathPlotAlcance->SetFont(mathPlotAlcanceFont);
     mathPlotAlcance->UpdateAll();
     mathPlotAlcance->Fit();
-    mathPlotAltura = new mpWindow(notebookGraficos, ID_MATHPLOT_ALTURA, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotAltura = new mpWindow(notebookGraficos, ID_MATHPLOT_ALTURA, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     mathPlotAltura->UpdateAll();
     mathPlotAltura->Fit();
-    mathPlotVelHorizontal = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE_HORIZONTAL, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotVelHorizontal = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE_HORIZONTAL, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     mathPlotVelHorizontal->UpdateAll();
     mathPlotVelHorizontal->Fit();
-    mathPlotVelVertical = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE_VERTICAL, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotVelVertical = new mpWindow(notebookGraficos, ID_MATHPLOT_VELOCIDADE_VERTICAL, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
     mathPlotVelVertical->UpdateAll();
     mathPlotVelVertical->Fit();
-    mathPlotYawRepouso = new mpWindow(notebookGraficos, ID_MATHPLOT_YAW_REPOUSO, wxDefaultPosition, wxSize(800,500), wxRAISED_BORDER|wxTAB_TRAVERSAL);
+    mathPlotYawRepouso = new mpWindow(notebookGraficos, ID_MATHPLOT_YAW_REPOUSO, wxDefaultPosition, wxSize(800,500), wxTAB_TRAVERSAL);
     wxFont mathPlotYawRepousoFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     mathPlotYawRepouso->SetFont(mathPlotYawRepousoFont);
     mathPlotYawRepouso->UpdateAll();
@@ -275,6 +284,12 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     anguloInicialUnidadeStaticText = new wxStaticText(plotPanel, ID_STATICTEXT_ANGULO_INICIAL_UNIDADE, _("\'\'\'"), wxPoint(984,56), wxDefaultSize, 0, _T("ID_STATICTEXT_ANGULO_INICIAL_UNIDADE"));
     menuBar1 = new wxMenuBar();
     MenuArquivo = new wxMenu();
+    MenuItem2 = new wxMenu();
+    MenuItem3 = new wxMenuItem(MenuItem2, ID_NEW_BD, _("Novo"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem2->Append(MenuItem3);
+    MenuItem1 = new wxMenuItem(MenuItem2, ID_MenuBoletimCarregarBD, _("Importar"), wxEmptyString, wxITEM_NORMAL);
+    MenuItem2->Append(MenuItem1);
+    MenuArquivo->Append(ID_MENUITEM1, _("Banco de Dados"), MenuItem2, wxEmptyString);
     MenuItemProjetil = new wxMenu();
     MenuItemProjetil105M1 = new wxMenuItem(MenuItemProjetil, idSubMenuPjt105, _("105mm M1"), wxEmptyString, wxITEM_RADIO);
     MenuItemProjetil->Append(MenuItemProjetil105M1);
@@ -303,7 +318,7 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     MenuItemFatoresDeAjuste = new wxMenu();
     MenuItemInserirFatores = new wxMenuItem(MenuItemFatoresDeAjuste, idSubMenuInserirFatores, _("Inserir"), _("Dados elevacao, deriva e alcance de 4 disparos a uma mesma velocidade, calcula-se os fatores de ajuste."), wxITEM_NORMAL);
     MenuItemFatoresDeAjuste->Append(MenuItemInserirFatores);
-    MenuItemDeletarFatores = new wxMenuItem(MenuItemFatoresDeAjuste, idSubMenuDeletarFatores, _("Deletar"), _("Mostra os valores dos polinômios inseridos para o projétil selecionado e permite deletar"), wxITEM_NORMAL);
+    MenuItemDeletarFatores = new wxMenuItem(MenuItemFatoresDeAjuste, idSubMenuDeletarFatores, _("Deletar"), _("Mostra os valores dos polinomios inseridos para o projetil selecionado e permite deletar."), wxITEM_NORMAL);
     MenuItemFatoresDeAjuste->Append(MenuItemDeletarFatores);
     MenuCalculo->Append(idMenuFatoresDeAjuste, _("Fatores de Ajuste"), MenuItemFatoresDeAjuste, wxEmptyString);
     menuBar1->Append(MenuCalculo, _("Calculo"));
@@ -327,6 +342,12 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     menuItemTabelaI = new wxMenuItem(menuTabela, idMenuTabelaI, _("I"), _("Gera tabela com as correcoes em direcao para rotacao da Terra."), wxITEM_NORMAL);
     menuTabela->Append(menuItemTabelaI);
     menuBar1->Append(menuTabela, _("Tabela"));
+    Menu1 = new wxMenu();
+    MenuBoletimSTANAG4061 = new wxMenuItem(Menu1, ID_MenuBoletimSTANAG4061, _("Novo"), wxEmptyString, wxITEM_NORMAL);
+    Menu1->Append(MenuBoletimSTANAG4061);
+    MenuItem4 = new wxMenuItem(Menu1, ID_MENUITEM2, _("Carregar"), wxEmptyString, wxITEM_NORMAL);
+    Menu1->Append(MenuItem4);
+    menuBar1->Append(Menu1, _("Boletins"));
     MenuAjuda = new wxMenu();
     MenuItemSobre = new wxMenuItem(MenuAjuda, idMenuSobre, _("Sobre\tF1"), _("Informacoes sobre o aplicativo"), wxITEM_NORMAL);
     MenuAjuda->Append(MenuItemSobre);
@@ -342,6 +363,7 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
+    LoadBDDialog = new wxFileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, wxFileSelectorDefaultWildcardStr, wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
 
     Connect(ID_TEXTCTRL_VELOCIDADE,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnvelocidadeTextCtrlText);
     Connect(ID_TEXTCTRL_ELEVACAO,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnelevacaoTextCtrlText);
@@ -355,6 +377,7 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     Connect(ID_CHOICE_RAMO,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnramoChoiceSelect);
     Connect(ID_TEXTCTRL_ANGULO_INICIAL,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnanguloInicialTextCtrlText);
     plotPanel->Connect(wxEVT_PAINT,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnplotPanelPaint1,0,this);
+    Connect(ID_MenuBoletimCarregarBD,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuBoletimCarregarBDSelected);
     Connect(idSubMenuPjt105,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemProjetil105Selected);
     Connect(idSubMenuPjt155M107,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemProjetil155Selected);
     Connect(idSubMenuPjt155M483E1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::onMenuItemProjetil155M483E1Selected);
@@ -364,8 +387,8 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     Connect(idMenuCalculoDireto,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemCalculoDiretoSelected);
     Connect(idMenuCalculoReverso,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemCalculoReversoSelected);
     Connect(ID_MENUITEM_ALCANCE_MAXIMO,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemAlcanceMaximoSelected);
-    Connect(idSubMenuInserirFatores,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemInserirFatoresSelected); //linha editada
-    Connect(idSubMenuDeletarFatores,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemDeletarFatoresSelected); //linha editada
+    Connect(idSubMenuInserirFatores,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemInserirFatoresSelected);
+    Connect(idSubMenuDeletarFatores,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnMenuItemDeletarFatoresSelected);
     Connect(idMenuTabelaA,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaASelected);
     Connect(idMenuTabelaB,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaBSelected);
     Connect(idMenuTabelaC,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaCSelected);
@@ -375,6 +398,7 @@ calculadorBalisiticaGraficoFrame::calculadorBalisiticaGraficoFrame(wxWindow* par
     Connect(idMenuTabelaG,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaGSelected);
     Connect(idMenuTabelaH,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaHSelected);
     Connect(idMenuTabelaI,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuItemTabelaISelected);
+    Connect(ID_MenuBoletimSTANAG4061,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnmenuBoletimSTANAG4061Selected);
     Connect(idMenuSobre,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OnAbout);
     Connect(idMenuInfo,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OninfoMenuItemSelected);
     Connect(idMenuCreditos,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&calculadorBalisiticaGraficoFrame::OncreditosMenuItemSelected);
@@ -1309,6 +1333,28 @@ void calculadorBalisiticaGraficoFrame::OnClose1(wxCloseEvent& event)
 
 void calculadorBalisiticaGraficoFrame::OnramoChoiceSelect(wxCommandEvent& event)
 {
+}
+void calculadorBalisiticaGraficoFrame::OnmenuBoletimSTANAG4061Selected(wxCommandEvent& event)
+{
+    boletimSTANAG4061Dialog *BoletimSTANAG4061Dialog = new boletimSTANAG4061Dialog(this);
+    //wxMessageBox(_("Banco de Dados carregado com sucesso!"));
+    BoletimSTANAG4061Dialog->Show();
+}
+
+
+
+
+void calculadorBalisiticaGraficoFrame::OnmenuBoletimCarregarBDSelected(wxCommandEvent& event)
+{
+    //loadBDDialog = new wxFileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, wxFileSelectorDefaultWildcardStr, wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
+    LoadBDDialog->ShowModal();
+    wxString path = LoadBDDialog->GetPath();
+    //wxMessageBox(_(path));
+    string path2 = path.ToStdString();
+    Boletins::getInstance()->loadBD(path2);
+
+
+
 }
 
 

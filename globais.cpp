@@ -11,6 +11,7 @@ TIPO_PROJETIL tipoPjt;
 Projetil projetil;
 ProjetilDAO* projDAO;
 Configuracao* config;
+Boletins* boletinsBD;
 
 CoeficientesDAO* coefDAO;//= CoeficientesDAO::getInstance();
 CoeficienteDragLinear coefDragLienar;
@@ -42,6 +43,7 @@ void initGlobais()
     coefDAO = CoeficientesDAO::getInstance();
     projDAO =  ProjetilDAO::getInstance();
     config = Configuracao::getInstance();
+    boletinsBD = Boletins::getInstance();
 
     projetil.setTipo(tipoPjt);
     projDAO->geraProjetil(projetil);

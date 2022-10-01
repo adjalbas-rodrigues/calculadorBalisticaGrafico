@@ -13,6 +13,7 @@
 #include <mathplot.h>
 #include <wx/button.h>
 #include <wx/choice.h>
+#include <wx/filedlg.h>
 #include <wx/frame.h>
 #include <wx/menu.h>
 #include <wx/notebook.h>
@@ -84,6 +85,8 @@ class calculadorBalisiticaGraficoFrame: public wxFrame
         void onMenuItemProjetil155M483E1Selected(wxCommandEvent& event);
         void OnmenuItemTabelaHSelected(wxCommandEvent& event);
         void OnmenuItemTabelaISelected(wxCommandEvent& event);
+        void OnmenuBoletimSTANAG4061Selected(wxCommandEvent& event);
+        void OnmenuBoletimCarregarBDSelected(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(calculadorBalisiticaGraficoFrame)
@@ -121,6 +124,9 @@ class calculadorBalisiticaGraficoFrame: public wxFrame
         static const long ID_TEXTCTRL_ANGULO_INICIAL;
         static const long ID_STATICTEXT_ANGULO_INICIAL_UNIDADE;
         static const long ID_PANEL_PLOT;
+        static const long ID_NEW_BD;
+        static const long ID_MenuBoletimCarregarBD;
+        static const long ID_MENUITEM1;
         static const long idSubMenuPjt105;
         static const long idSubMenuPjt155M107;
         static const long idSubMenuPjt155M483E1;
@@ -132,9 +138,9 @@ class calculadorBalisiticaGraficoFrame: public wxFrame
         static const long idMenuCalculoDireto;
         static const long idMenuCalculoReverso;
         static const long ID_MENUITEM_ALCANCE_MAXIMO;
-        static const long idMenuFatoresDeAjuste; //linha editada
-        static const long idSubMenuInserirFatores; //edi
-        static const long idSubMenuDeletarFatores; //edi
+        static const long idSubMenuInserirFatores;
+        static const long idSubMenuDeletarFatores;
+        static const long idMenuFatoresDeAjuste;
         static const long idMenuTabelaA;
         static const long idMenuTabelaB;
         static const long idMenuTabelaC;
@@ -144,6 +150,8 @@ class calculadorBalisiticaGraficoFrame: public wxFrame
         static const long idMenuTabelaG;
         static const long idMenuTabelaH;
         static const long idMenuTabelaI;
+        static const long ID_MenuBoletimSTANAG4061;
+        static const long ID_MENUITEM2;
         static const long idMenuSobre;
         static const long idMenuInfo;
         static const long idMenuCreditos;
@@ -165,18 +173,25 @@ class calculadorBalisiticaGraficoFrame: public wxFrame
         wxButton* removerButton;
         wxChoice* ramoChoice;
         wxChoice* trajetoriaChoice;
+        wxFileDialog* LoadBDDialog;
+        wxMenu* Menu1;
         wxMenu* MenuCalculo;
+        wxMenu* MenuItem2;
         wxMenu* MenuItemConfiguracoes;
+        wxMenu* MenuItemFatoresDeAjuste;
         wxMenu* MenuItemProjetil;
         wxMenu* menuTabela;
-        wxMenu* MenuItemFatoresDeAjuste; //editada.
-        wxMenuItem* MenuItemInserirFatores; //linha editada
-        wxMenuItem* MenuItemDeletarFatores; //linha editada
+        wxMenuItem* MenuBoletimSTANAG4061;
+        wxMenuItem* MenuItem1;
+        wxMenuItem* MenuItem3;
+        wxMenuItem* MenuItem4;
         wxMenuItem* MenuItemAlcanceMaximo;
         wxMenuItem* MenuItemCalculoDireto;
         wxMenuItem* MenuItemCalculoReverso;
         wxMenuItem* MenuItemConfiguracoesGerais;
         wxMenuItem* MenuItemConfiguracoesTecnicas;
+        wxMenuItem* MenuItemDeletarFatores;
+        wxMenuItem* MenuItemInserirFatores;
         wxMenuItem* MenuItemProjetil105M1;
         wxMenuItem* MenuItemProjetil155M107;
         wxMenuItem* MenuItemProjetil155M483E1;

@@ -105,6 +105,10 @@
 		</Linker>
 		<Unit filename="ConfiguracoesGeraisDialog.cpp" />
 		<Unit filename="ConfiguracoesGeraisDialog.h" />
+		<Unit filename="boletimSTANAG4061Dialog.cpp" />
+		<Unit filename="boletimSTANAG4061Dialog.h" />
+		<Unit filename="boletins.cpp" />
+		<Unit filename="boletins.h" />
 		<Unit filename="calculadorBalisiticaGraficoApp.cpp" />
 		<Unit filename="calculadorBalisiticaGraficoApp.h" />
 		<Unit filename="calculadorBalisiticaGraficoMain.cpp" />
@@ -184,6 +188,7 @@
 		<Unit filename="wxsmith/ParametrosGDialog.wxs" />
 		<Unit filename="wxsmith/ParametrosIDialog.wxs" />
 		<Unit filename="wxsmith/ProjetilCoeficientesDialog.wxs" />
+		<Unit filename="wxsmith/boletimSTANAG4061Dialog.wxs" />
 		<Unit filename="wxsmith/calculadorBalisiticaGraficoframe.wxs" />
 		<Unit filename="wxsmith/calculadorFatoresDialog.wxs" />
 		<Unit filename="wxsmith/deletarFatoresDialog.wxs" />
@@ -207,6 +212,7 @@
 					<wxDialog wxs="wxsmith/ParametrosEDialog.wxs" src="tabelaDialog/parametrosEDialog.cpp" hdr="tabelaDialog/parametrosEDialog.h" fwddecl="0" i18n="1" name="ParametrosEDialog" language="CPP" />
 					<wxDialog wxs="wxsmith/ParametrosBDialog.wxs" src="tabelaDialog/parametrosBDialog.cpp" hdr="tabelaDialog/parametrosBDialog.h" fwddecl="0" i18n="1" name="ParametrosBDialog" language="CPP" />
 					<wxDialog wxs="wxsmith/ParametrosIDialog.wxs" src="tabelaDialog/ParametrosIDialog.cpp" hdr="tabelaDialog/ParametrosIDialog.h" fwddecl="0" i18n="1" name="ParametrosIDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/boletimSTANAG4061Dialog.wxs" src="boletimSTANAG4061Dialog.cpp" hdr="boletimSTANAG4061Dialog.h" fwddecl="0" i18n="1" name="boletimSTANAG4061Dialog" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

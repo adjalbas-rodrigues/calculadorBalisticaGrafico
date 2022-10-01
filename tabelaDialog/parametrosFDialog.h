@@ -59,6 +59,7 @@ class ParametrosFDialog: public wxDialog
 		void OnClose(wxCloseEvent& event);
 		void OnsalvarButtonClick(wxCommandEvent& event);
 		void OnmassaPropelenteTextCtrlText(wxCommandEvent& event);
+		void OnInit(wxInitDialogEvent& event);
 		//*)
         double *massaPropelente;
 		DECLARE_EVENT_TABLE()

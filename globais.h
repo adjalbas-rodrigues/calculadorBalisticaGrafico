@@ -19,6 +19,7 @@
 #include <calculador/calculadorVacuo.h>
 #include <fatoresdeajuste/calculadorFator.h>
 #include "configuracao.h"
+#include "boletins.h"
 extern TIPO_PROJETIL tipoPjt;// = TIPO_PROJETIL::PJT_155_M107;
 extern ProjetilDAO* projDAO;// =  ProjetilDAO::getInstance();
 extern Projetil projetil;
@@ -35,6 +36,7 @@ extern CalculadorPontoMassaModificado1990 calcPontoMassaModificado1990;
 extern CalculadorFator calcfat;
 
 extern Configuracao* config;
+extern Boletins* boletinsBD;
 
 string getPjtDescricao(Projetil projetil);
 void initGlobais();

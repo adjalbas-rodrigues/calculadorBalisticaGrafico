@@ -33,8 +33,9 @@ END_EVENT_TABLE()
 ParametrosGDialog::ParametrosGDialog(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(ParametrosGDialog)
-	Create(parent, wxID_ANY, _("Parametros tabela G"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
+	Create(parent, id, _("Parametros tabela G"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
 	SetClientSize(wxSize(426,289));
+	Move(wxDefaultPosition);
 	desvioProvavelEmElevacaoTextCtrl = new wxTextCtrl(this, ID_TEXTCTRL_DESVIO_PROVAVEL_ELEVACAO, wxEmptyString, wxPoint(280,48), wxSize(48,21), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL_DESVIO_PROVAVEL_ELEVACAO"));
 	wxFont desvioProvavelEmElevacaoTextCtrlFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	desvioProvavelEmElevacaoTextCtrl->SetFont(desvioProvavelEmElevacaoTextCtrlFont);

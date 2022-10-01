@@ -17,7 +17,6 @@
 		<object class="wxStaticBitmap" name="ID_STATICBITMAP_LOGO" variable="logoStaticBitmap" member="yes">
 			<bitmap>.\resource\art_export.png</bitmap>
 			<pos>500,140</pos>
-			<style>0</style>
 		</object>
 		<object class="wxPanel" name="ID_PANEL_PLOT" variable="plotPanel" member="yes">
 			<pos>0,0</pos>
@@ -169,7 +168,7 @@
 							<family>swiss</family>
 							<face>Arial</face>
 						</font>
-						<style>wxSIMPLE_BORDER</style>
+						<style>wxBORDER_SIMPLE</style>
 					</object>
 					<label>Trajetoria</label>
 				</object>
@@ -325,6 +324,16 @@
 		<object class="wxMenuBar" variable="menuBar1" member="no">
 			<object class="wxMenu" variable="MenuArquivo" member="no">
 				<label>&amp;Arquivo</label>
+				<object class="wxMenu" name="ID_MENUITEM1" variable="MenuItem2" member="yes">
+					<label>Banco de Dados</label>
+					<object class="wxMenuItem" name="ID_NEW_BD" variable="MenuItem3" member="yes">
+						<label>Novo</label>
+					</object>
+					<object class="wxMenuItem" name="ID_MenuBoletimCarregarBD" variable="MenuItem1" member="yes">
+						<label>Importar</label>
+						<handler function="OnmenuBoletimCarregarBDSelected" entry="EVT_MENU" />
+					</object>
+				</object>
 				<object class="wxMenu" name="idMenuProjetil" variable="MenuItemProjetil" member="yes">
 					<label>Projetil</label>
 					<object class="wxMenuItem" name="idSubMenuPjt105" variable="MenuItemProjetil105M1" member="yes">
@@ -442,6 +451,16 @@
 					<handler function="OnmenuItemTabelaISelected" entry="EVT_MENU" />
 				</object>
 			</object>
+			<object class="wxMenu" variable="Menu1" member="yes">
+				<label>Boletins</label>
+				<object class="wxMenuItem" name="ID_MenuBoletimSTANAG4061" variable="MenuBoletimSTANAG4061" member="yes">
+					<label>Novo</label>
+					<handler function="OnmenuBoletimSTANAG4061Selected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="ID_MENUITEM2" variable="MenuItem4" member="yes">
+					<label>Carregar</label>
+				</object>
+			</object>
 			<object class="wxMenu" variable="MenuAjuda" member="no">
 				<label>Ajuda</label>
 				<object class="wxMenuItem" name="idMenuSobre" variable="MenuItemSobre" member="no">
@@ -466,6 +485,9 @@
 			<fields>1</fields>
 			<widths>-1</widths>
 			<styles>wxSB_NORMAL</styles>
+		</object>
+		<object class="wxFileDialog" variable="LoadBDDialog" member="yes">
+			<message>Select file</message>
 		</object>
 	</object>
 </wxsmith>

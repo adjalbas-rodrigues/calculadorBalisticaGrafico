@@ -192,3 +192,7 @@ void ParametrosFDialog::OnsalvarButtonClick(wxCommandEvent& event)
 
     Destroy();
 }
+
+void ParametrosFDialog::OnInit(wxInitDialogEvent& event)
+{
+}
