@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+    <object class="wxDialog" name="DeletarFatoresDialog">
+        <title>Deletar Fatores de Ajuste</title>
+        <size>1000,600</size>
+        <centered>1</centered>
+        <id_arg>0</id_arg>
+        <handler function="OnClose" entry="EVT_CLOSE" />
+        <object class="wxListCtrl" name="ID_LISTCTRL_FATORES" variable="fatoresListCtrl" member="yes">
+            <pos>10,10</pos>
+            <size>980,480</size>
+            <font>
+                <size>15</size>
+                <style>normal</style>
+                <weight>normal</weight>
+                <underlined>0</underlined>
+                <family>swiss</family>
+            </font>
+            <style>wxLC_REPORT</style>
+        </object>
+        <object class="wxButton" name="ID_BUTTON_DELETAR" variable="deletarButton" member="yes">
+            <label>Deletar</label>
+            <pos>450,530</pos>
+            <size>100,40</size>
+            <font>
+                <size>12</size>
+                <style>normal</style>
+                <weight>normal</weight>
+                <underlined>0</underlined>
+                <family>swiss</family>
+                <face>Sans</face>
+            </font>
+            <handler function="OnDeletarButtonClick" entry="EVT_BUTTON" />
+        </object>
+        <object class="wxStaticText" name="ID_STATICTEXT_PROJETIL" variable="projetilStaticText" member="yes">
+            <label>0</label>
+            <pos>12,500</pos>
+            <font>
+                <size>12</size>
+                <style>normal</style>
+                <weight>normal</weight>
+                <underlined>0</underlined>
+                <family>swiss</family>
+            </font>
+        </object>
+    </object>
+</wxsmith>

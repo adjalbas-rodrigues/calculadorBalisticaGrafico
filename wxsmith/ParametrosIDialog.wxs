@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ParametrosIDialog">
+		<title>Parametros da Tabela I</title>
+		<centered>1</centered>
+		<size>243,140</size>
+		<id_arg>0</id_arg>
+		<object class="wxButton" name="ID_BUTTON_SALVAR" variable="salavarButton" member="yes">
+			<label>Salvar</label>
+			<pos>16,96</pos>
+			<size>83,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnsalavarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_SAIR" variable="sairButton" member="yes">
+			<label>Sair</label>
+			<pos>136,96</pos>
+			<size>80,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnsairButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_LATITUDE" variable="latitudeStaticText" member="yes">
+			<label>Latitude:</label>
+			<pos>40,40</pos>
+			<size>68,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_LATITUDE" variable="latitudeTextCtrl" member="yes">
+			<value>0.0</value>
+			<maxlength>4</maxlength>
+			<pos>112,40</pos>
+			<size>56,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_LATITUDE_UNIDADE" variable="latitudeUnidadeStaticText" member="yes">
+			<label>º</label>
+			<pos>170,40</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+	</object>
+</wxsmith>

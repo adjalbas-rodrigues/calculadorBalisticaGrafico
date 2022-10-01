@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="calculadorBalisiticaGraficoFrame">
+		<title>Calculador Balistico</title>
+		<icon>.\resource\art_logo.png</icon>
+		<pos>50,50</pos>
+		<size>1178,608</size>
+		<font>
+			<size>14</size>
+			<style>normal</style>
+			<weight>normal</weight>
+			<underlined>0</underlined>
+			<family>swiss</family>
+		</font>
+		<id_arg>0</id_arg>
+		<handler function="OnClose1" entry="EVT_CLOSE" />
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP_LOGO" variable="logoStaticBitmap" member="yes">
+			<bitmap>.\resource\art_export.png</bitmap>
+			<pos>500,140</pos>
+			<style>0</style>
+		</object>
+		<object class="wxPanel" name="ID_PANEL_PLOT" variable="plotPanel" member="yes">
+			<pos>0,0</pos>
+			<size>1175,605</size>
+			<hidden>1</hidden>
+			<handler function="OnplotPanelPaint1" entry="EVT_PAINT" />
+			<object class="wxStaticText" name="ID_STATICTEXT_VELOCIDADE" variable="velocidadeStaticText" member="yes">
+				<label>Vo</label>
+				<pos>136,16</pos>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL_VELOCIDADE" variable="velocidadeTextCtrl" member="yes">
+				<value>100</value>
+				<maxlength>5</maxlength>
+				<pos>168,16</pos>
+				<size>80,31</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<style>wxTE_CENTRE</style>
+				<handler function="OnvelocidadeTextCtrlText" entry="EVT_TEXT" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_UNIDADE_VELOCIDADE" variable="unidadeVelocidadeStaticText" member="yes">
+				<label>m/s</label>
+				<pos>256,16</pos>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_ELEVACAO" variable="elevacaoStaticText" member="yes">
+				<label>Elevacao:</label>
+				<pos>336,16</pos>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL_ELEVACAO" variable="elevacaoTextCtrl" member="yes">
+				<value>800</value>
+				<maxlength>6</maxlength>
+				<pos>432,16</pos>
+				<size>72,27</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<style>wxTE_CENTRE</style>
+				<handler function="OnelevacaoTextCtrlText" entry="EVT_TEXT" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON_CALCULAR" variable="calcularButton" member="yes">
+				<label>Calcular</label>
+				<pos>16,120</pos>
+				<size>93,32</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<handler function="OncalcularButtonClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="elevacaoUnidadeStaticText" member="yes">
+				<label>&apos;&apos;&apos;</label>
+				<pos>504,16</pos>
+				<size>24,23</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+			</object>
+			<object class="wxButton" name="ID_BUTTON_LIMPAR" variable="limparButton" member="yes">
+				<label>Limpar</label>
+				<pos>16,224</pos>
+				<size>96,33</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<handler function="OnlimparButtonClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_REMOVER_BUTTON" variable="removerButton" member="yes">
+				<label>Remover</label>
+				<pos>16,168</pos>
+				<size>96,32</size>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<handler function="OnremoverButtonClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxNotebook" name="ID_NOTEBOOK1" variable="notebookGraficos" member="yes">
+				<pos>150,104</pos>
+				<size>945,424</size>
+				<font>
+					<size>12</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_PRINCIPAL" variable="mathPlotPrincipal" member="yes">
+						<size>-1,-1</size>
+						<font>
+							<size>12</size>
+							<style>normal</style>
+							<weight>normal</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+						<style>wxSIMPLE_BORDER</style>
+					</object>
+					<label>Trajetoria</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_DESVIO" variable="mathPlotDerivacao" member="yes">
+						<font>
+							<size>12</size>
+							<style>normal</style>
+							<weight>normal</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<label>Derivacao</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_VELOCIDADE" variable="mathPlotVelocidade" member="yes">
+						<font>
+							<size>12</size>
+							<style>normal</style>
+							<weight>normal</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<label>Velocidade</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_ALCANCE" variable="mathPlotAlcance" member="yes">
+						<font>
+							<size>12</size>
+							<style>normal</style>
+							<weight>normal</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<label>Alcance</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_ALTURA" variable="mathPlotAltura" member="yes" />
+					<label>Altura</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_VELOCIDADE_HORIZONTAL" variable="mathPlotVelHorizontal" member="yes" />
+					<label>Vel. Horiz.</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_VELOCIDADE_VERTICAL" variable="mathPlotVelVertical" member="yes" />
+					<label>Vel. Vert.</label>
+				</object>
+				<object class="notebookpage">
+					<object class="mpWindow" name="ID_MATHPLOT_YAW_REPOUSO" variable="mathPlotYawRepouso" member="yes">
+						<size>800,500</size>
+						<font>
+							<size>12</size>
+							<style>normal</style>
+							<weight>normal</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<label>Yaw</label>
+				</object>
+			</object>
+			<object class="wxButton" name="ID_BUTTON_IMPRIMIR" variable="imprimirButton" member="yes">
+				<label>Imprimir</label>
+				<pos>16,288</pos>
+				<size>96,33</size>
+				<handler function="OnimprimirButtonClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="trajetoriaStaticText" member="yes">
+				<label>Trajetoria:</label>
+				<pos>336,56</pos>
+			</object>
+			<object class="wxChoice" name="ID_CHOICE_TRAJETORIA" variable="trajetoriaChoice" member="yes">
+				<content>
+					<item>Mergulhante</item>
+					<item>Vertical</item>
+				</content>
+				<selection>0</selection>
+				<pos>432,56</pos>
+				<size>128,30</size>
+				<handler function="OnChoiceTrajetoriaSelect" entry="EVT_CHOICE" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_ALCANCE" variable="alcanceStaticText" member="yes">
+				<label>Alcance:</label>
+				<pos>592,16</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL_ALCANCE" variable="alcanceTextCtrl" member="yes">
+				<value>0</value>
+				<maxlength>5</maxlength>
+				<pos>672,16</pos>
+				<size>88,31</size>
+				<style>wxTE_CENTRE</style>
+				<handler function="OnalcanceTextCtrlText" entry="EVT_TEXT" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_UNIDADE_ALCANCE" variable="unidadeAlcanceStaticText" member="yes">
+				<label>m</label>
+				<pos>760,16</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL_DESNIVEL" variable="desnivelTextCtrl" member="yes">
+				<value>0</value>
+				<maxlength>4</maxlength>
+				<pos>680,56</pos>
+				<size>64,31</size>
+				<style>wxTE_CENTRE</style>
+				<handler function="OndesnivelTextCtrlText" entry="EVT_TEXT" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_DESNIVEL" variable="desnivelStaticText" member="yes">
+				<label>Desnivel:</label>
+				<pos>592,56</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_" variable="unidadeDesnivelStaticText" member="yes">
+				<label>m</label>
+				<pos>744,56</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_RAMO" variable="ramoStaticText" member="yes">
+				<label>Ramo:</label>
+				<pos>832,16</pos>
+			</object>
+			<object class="wxChoice" name="ID_CHOICE_RAMO" variable="ramoChoice" member="yes">
+				<content>
+					<item>Ascendente</item>
+					<item>Descendente</item>
+				</content>
+				<selection>1</selection>
+				<pos>904,16</pos>
+				<size>168,30</size>
+				<handler function="OnramoChoiceSelect" entry="EVT_CHOICE" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_ANGULO_INICIAL" variable="anguloInicialStaticText" member="yes">
+				<label>Ang. Inicial:</label>
+				<pos>800,56</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL_ANGULO_INICIAL" variable="anguloInicialTextCtrl" member="yes">
+				<value>400</value>
+				<maxlength>4</maxlength>
+				<pos>904,56</pos>
+				<size>72,31</size>
+				<style>wxTE_CENTRE</style>
+				<handler function="OnanguloInicialTextCtrlText" entry="EVT_TEXT" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT_ANGULO_INICIAL_UNIDADE" variable="anguloInicialUnidadeStaticText" member="yes">
+				<label>&apos;&apos;&apos;</label>
+				<pos>984,56</pos>
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="menuBar1" member="no">
+			<object class="wxMenu" variable="MenuArquivo" member="no">
+				<label>&amp;Arquivo</label>
+				<object class="wxMenu" name="idMenuProjetil" variable="MenuItemProjetil" member="yes">
+					<label>Projetil</label>
+					<object class="wxMenuItem" name="idSubMenuPjt105" variable="MenuItemProjetil105M1" member="yes">
+						<label>105mm M1</label>
+						<handler function="OnMenuItemProjetil105Selected" entry="EVT_MENU" />
+						<radio>1</radio>
+					</object>
+					<object class="wxMenuItem" name="idSubMenuPjt155M107" variable="MenuItemProjetil155M107" member="yes">
+						<label>155mm M107</label>
+						<handler function="OnMenuItemProjetil155Selected" entry="EVT_MENU" />
+						<radio>1</radio>
+					</object>
+					<object class="wxMenuItem" name="idSubMenuPjt155M483E1" variable="MenuItemProjetil155M483E1" member="yes">
+						<label>155mm M483E1</label>
+						<handler function="onMenuItemProjetil155M483E1Selected" entry="EVT_MENU" />
+						<radio>1</radio>
+					</object>
+				</object>
+				<object class="wxMenu" name="idMenuConfiguracoes" variable="MenuItemConfiguracoes" member="yes">
+					<label>Configuracoes</label>
+					<object class="wxMenuItem" name="idSubMenuConfiguracoesGerais" variable="MenuItemConfiguracoesGerais" member="yes">
+						<label>Gerais</label>
+						<help>Parametros fisicos das simulacoes feitas</help>
+						<handler function="OnMenuItemConfiguracoesGeraisSelected" entry="EVT_MENU" />
+					</object>
+					<object class="wxMenuItem" name="idSubMenuConfiguracoesTecnicas" variable="MenuItemConfiguracoesTecnicas" member="yes">
+						<label>Tecnicas</label>
+						<help>Parametros de calculo computacional.</help>
+						<handler function="OnMenuItemConfiguracoesTecnicasSelected" entry="EVT_MENU" />
+					</object>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuSair" variable="MenuItemSair" member="no">
+					<label>Sair</label>
+					<accel>Alt-F4</accel>
+					<help>Sai do aplicativo.</help>
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="MenuCalculo" member="yes">
+				<label>Calculo</label>
+				<object class="wxMenuItem" name="idMenuCalculoDireto" variable="MenuItemCalculoDireto" member="yes">
+					<label>Direto</label>
+					<help>Dados a velocidade inicial e a elevacao, calcula-se a trajetoria</help>
+					<handler function="OnMenuItemCalculoDiretoSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuCalculoReverso" variable="MenuItemCalculoReverso" member="yes">
+					<label>Reverso</label>
+					<help>Dados o tipo de trajetoria, a velocidade inicial e o alcance desejado; determina-se a elevacao necessaria.</help>
+					<handler function="OnMenuItemCalculoReversoSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="ID_MENUITEM_ALCANCE_MAXIMO" variable="MenuItemAlcanceMaximo" member="yes">
+					<label>Alcance Maximo</label>
+					<handler function="OnMenuItemAlcanceMaximoSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenu" name="idMenuFatoresDeAjuste" variable="MenuItemFatoresDeAjuste" member="yes">
+					<label>Fatores de Ajuste</label>
+					<object class="wxMenuItem" name="idSubMenuInserirFatores" variable="MenuItemInserirFatores" member="yes">
+						<label>Inserir</label>
+						<help>Dados elevacao, deriva e alcance de 4 disparos a uma mesma velocidade, calcula-se os fatores de ajuste.</help>
+						<handler function="OnMenuItemInserirFatoresSelected" entry="EVT_MENU" />
+					</object>
+					<object class="wxMenuItem" name="idSubMenuDeletarFatores" variable="MenuItemDeletarFatores" member="yes">
+						<label>Deletar</label>
+						<help>Mostra os valores dos polinomios inseridos para o projetil selecionado e permite deletar.</help>
+						<handler function="OnMenuItemDeletarFatoresSelected" entry="EVT_MENU" />
+					</object>
+				</object>
+			</object>
+			<object class="wxMenu" variable="menuTabela" member="yes">
+				<label>Tabela</label>
+				<object class="wxMenuItem" name="idMenuTabelaA" variable="menuItemTabelaA" member="yes">
+					<label>A</label>
+					<help>Gera a tabela para a relacao entre angulo de elevacao e linha do Boletim.</help>
+					<handler function="OnmenuItemTabelaASelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaB" variable="menuItemTabelaB" member="yes">
+					<label>B</label>
+					<help>Exibe o alcance complementar para o sitio topografico.</help>
+					<handler function="OnmenuItemTabelaBSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaC" variable="menuItemTabelaC" member="yes">
+					<label>C</label>
+					<help>Exibes as componentes do vento.</help>
+					<handler function="OnmenuItemTabelaCSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaD" variable="menuItemTabelaD" member="yes">
+					<label>D</label>
+					<help>Exibe as correcoes de densidade e temperatura, em caso de desnivel entre a bateria e a estacao meteorologica.</help>
+					<handler function="OnmenuItemTabelaDSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaE" variable="menuItemTabelaE" member="yes">
+					<label>E</label>
+					<help>Exibe as correcoes de velocidade inicial em funcao da temperatura do projetil.</help>
+					<handler function="OnmenuItemTabelaESelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaF" variable="menuItemTabelaF" member="yes">
+					<label>F</label>
+					<help>Gera a tabela para os elementos basicos do tiro e as correcoes unitarias.</help>
+					<handler function="OnmenuItemTabelaFSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaG" variable="menuItemTabelaG" member="yes">
+					<label>G</label>
+					<help>Gera tabela com as informacoes complementares</help>
+					<handler function="OnmenuItemTabelaGSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaH" variable="menuItemTabelaH" member="yes">
+					<label>H</label>
+					<help>Gera tabela com as correcoes em alcance para rotacao da Terra.</help>
+					<handler function="OnmenuItemTabelaHSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuTabelaI" variable="menuItemTabelaI" member="yes">
+					<label>I</label>
+					<help>Gera tabela com as correcoes em direcao para rotacao da Terra.</help>
+					<handler function="OnmenuItemTabelaISelected" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="MenuAjuda" member="no">
+				<label>Ajuda</label>
+				<object class="wxMenuItem" name="idMenuSobre" variable="MenuItemSobre" member="no">
+					<label>Sobre</label>
+					<accel>F1</accel>
+					<help>Informacoes sobre o aplicativo</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuInfo" variable="infoMenuItem" member="yes">
+					<label>Info</label>
+					<help>Descricao detalhada do aplicativo.</help>
+					<handler function="OninfoMenuItemSelected" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idMenuCreditos" variable="creditosMenuItem" member="yes">
+					<label>Creditos</label>
+					<help>Ambiente de desenvolvimento e bibliotecas de terceiros.</help>
+					<handler function="OncreditosMenuItemSelected" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
+			<fields>1</fields>
+			<widths>-1</widths>
+			<styles>wxSB_NORMAL</styles>
+		</object>
+	</object>
+</wxsmith>

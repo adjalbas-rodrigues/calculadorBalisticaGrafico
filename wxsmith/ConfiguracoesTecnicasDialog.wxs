@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ConfiguracoesTecnicasDialog">
+		<title>Tecnicas</title>
+		<size>325,263</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<handler function="OnInit" entry="EVT_INIT_DIALOG" />
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="staticTextPasso" member="yes">
+			<label>Passo:</label>
+			<pos>64,32</pos>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_PASSO" variable="textCtrlPasso" member="yes">
+			<value>0.01</value>
+			<maxlength>6</maxlength>
+			<pos>128,32</pos>
+			<size>64,27</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_PASS_UNIDADE" variable="staticTextPassoUnidade" member="yes">
+			<label>seg</label>
+			<pos>192,32</pos>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_PRECISAO" variable="staticTextPrecisao" member="yes">
+			<label>Precisao:</label>
+			<pos>40,88</pos>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_PRECISAO" variable="textCtrlPrecisao" member="yes">
+			<value>20</value>
+			<maxlength>4</maxlength>
+			<pos>128,88</pos>
+			<size>48,27</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OntextCtrlPrecisaoText" entry="EVT_TEXT" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_PRECISAO_UNIDADE" variable="staticTextPrecisaoUnidade" member="yes">
+			<label>m</label>
+			<pos>184,88</pos>
+			<size>32,23</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="buttonSalvar" member="yes">
+			<label>Salvar</label>
+			<pos>64,200</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnbuttonSalvarClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_CANCELAR" variable="buttonCancelar" member="yes">
+			<label>Cancelar</label>
+			<pos>176,200</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnbuttonCancelarClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

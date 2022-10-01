@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="InformacaoDialog">
+		<title>Info</title>
+		<size>934,492</size>
+		<id_arg>0</id_arg>
+		<object class="wxHtmlWindow" name="ID_HTMLWINDOW1" variable="textoHtmlWindow" member="yes">
+			<pos>32,16</pos>
+			<size>864,400</size>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_FECHAR" variable="fecharButton" member="yes">
+			<label>Fechar</label>
+			<pos>528,432</pos>
+			<size>104,32</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Arial</face>
+			</font>
+			<handler function="OnfecharButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_NAVEGADOR" variable="navegadorButton" member="yes">
+			<label>Navegador</label>
+			<pos>312,432</pos>
+			<size>107,32</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Arial</face>
+			</font>
+			<handler function="OnnavegadorButtonClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ParametrosGDialog">
+		<title>Parametros tabela G</title>
+		<size>426,289</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_ELEVACAO" variable="desvioProvavelEmElevacaoTextCtrl" member="yes">
+			<pos>280,48</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ELEVACAO" variable="desvioProvavelEmElevacaoStaticText" member="yes">
+			<label>Desvio Provavel em Elevacao:</label>
+			<pos>64,48</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ELEVACAO_UNIDADE" variable="desvioProvavelElevacaoUnidadeStaticText" member="yes">
+			<label>&apos;&apos;&apos;</label>
+			<pos>336,48</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_ARRASTO" variable="desvioProvavelEmArrastoTextCtrl" member="yes">
+			<pos>272,88</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ARRASTO" variable="desvioProvavelEmArrastoStaticText" member="yes">
+			<label>Desvio Provavel em Arrasto:</label>
+			<pos>72,88</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ARRASTO_UNIDADE" variable="desvioProvavelEmArrastoUnidadeStaticText" member="yes">
+			<label>%</label>
+			<pos>336,88</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_VELOCIDADE" variable="desvioProvavelEmVelocidadeStaticText" member="yes">
+			<label>Desvio Provavel em Velocidade:</label>
+			<pos>48,128</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_VELOCIDADE_UNIDADE" variable="desvioProvavelEmVelocidadeUnidadeStaticText" member="yes">
+			<label>m/s</label>
+			<pos>336,128</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_VELOCIDADE" variable="desvioProvavelEmVelocidadeTextCtrl" member="yes">
+			<pos>280,128</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_AJUSTE_DESVIO_PROVAVEL_DIRECAO" variable="fatorAjusteDesvioProvavelDirecaoTextCtrl" member="yes">
+			<pos>280,176</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_FATOR_AJUSTE_DESVIO_PROVAVEL_DIRECAO" variable="fatorAjusteDesvioProvavelEmDirecaoStaticText" member="yes">
+			<label>Fator de Ajuste para&#x0A; Desvio Provavel em Direcao</label>
+			<pos>64,168</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxALIGN_CENTRE</style>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_SALVAR" variable="salvarButton" member="yes">
+			<label>Salvar</label>
+			<pos>104,232</pos>
+			<size>88,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnsalvarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_CANCELAR" variable="cancelarButton" member="yes">
+			<label>Cancelar</label>
+			<pos>232,232</pos>
+			<size>88,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OncancelarButtonClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

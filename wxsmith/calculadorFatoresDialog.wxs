@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="CalculadorFatoresDialog">
+		<title>Calcular Fatores de Ajuste</title>
+		<centered>1</centered>
+		<size>856,632</size>
+		<id_arg>0</id_arg>
+		<handler function="OnClose" entry="EVT_CLOSE" />
+		<object class="wxStaticText" name="ID_STATICTEXT_VELOCIDADE" variable="velocidadeStaticText" member="yes">
+			<label>Vo (m/s)</label>
+			<pos>75,12</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_ELEVACAO" variable="elevacaoStaticText" member="yes">
+			<label>elevacao (&apos;&apos;&apos;)</label>
+			<pos>62,84</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_ALCANCE" variable="alcanceStaticText" member="yes">
+			<label>alcance (m)</label>
+			<pos>231,84</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DERIVA" variable="derivaStaticText" member="yes">
+			<label>deriva (&apos;&apos;&apos;)</label>
+			<pos>405,84</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_FATOR_FORMA" variable="fatorFormaStaticText" member="yes">
+			<label>i</label>
+			<pos>584,84</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_FATOR_LIFT" variable="fatorLiftStaticText" member="yes">
+			<label>fL</label>
+			<pos>734,84</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_VELOCIDADE" variable="velocidadeTextCtrl" member="yes">
+			<pos>35,31</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ELEVACAO1" variable="elevacao1TextCtrl" member="yes">
+			<pos>35,105</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ELEVACAO2" variable="elevacao2TextCtrl" member="yes">
+			<pos>35,165</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ELEVACAO3" variable="elevacao3TextCtrl" member="yes">
+			<pos>35,225</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ELEVACAO4" variable="elevacao4TextCtrl" member="yes">
+			<pos>35,285</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ALCANCE1" variable="alcance1TextCtrl" member="yes">
+			<pos>199,105</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ALCANCE2" variable="alcance2TextCtrl" member="yes">
+			<pos>199,165</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ALCANCE3" variable="alcance3TextCtrl" member="yes">
+			<pos>199,225</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_ALCANCE4" variable="alcance4TextCtrl" member="yes">
+			<pos>199,285</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DERIVA1" variable="deriva1TextCtrl" member="yes">
+			<pos>362,105</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DERIVA2" variable="deriva2TextCtrl" member="yes">
+			<pos>362,165</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DERIVA3" variable="deriva3TextCtrl" member="yes">
+			<pos>362,225</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DERIVA4" variable="deriva4TextCtrl" member="yes">
+			<pos>362,285</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_FORMA1" variable="fatorForma1TextCtrl" member="yes">
+			<pos>524,105</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_FORMA2" variable="fatorForma2TextCtrl" member="yes">
+			<pos>524,165</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_FORMA3" variable="fatorForma3TextCtrl" member="yes">
+			<pos>524,225</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_FORMA4" variable="fatorForma4TextCtrl" member="yes">
+			<pos>524,285</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_LIFT1" variable="fatorLift1TextCtrl" member="yes">
+			<pos>679,105</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_LIFT2" variable="fatorLift2TextCtrl" member="yes">
+			<pos>679,165</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_LIFT3" variable="fatorLift3TextCtrl" member="yes">
+			<pos>679,225</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FATOR_LIFT4" variable="fatorLift4TextCtrl" member="yes">
+			<pos>679,285</pos>
+			<size>128,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_GERAR" variable="gerarButton" member="yes">
+			<label>Gerar polinomio</label>
+			<pos>172,355</pos>
+			<size>124,41</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnGerarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_REGISTRAR" variable="registrarButton" member="yes">
+			<label>Cancelar</label>
+			<pos>368,355</pos>
+			<size>115,41</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnRegistrarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_LIMPAR" variable="limparButton" member="yes">
+			<label>Limpar</label>
+			<pos>575,355</pos>
+			<size>116,41</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnLimparButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="mpWindow" name="ID_MATHPLOT_FATOR_LIFT" variable="mathPlotFatorLift" member="yes">
+			<pos>450,425</pos>
+			<size>360,200</size>
+			<style>wxBORDER_RAISED|wxTAB_TRAVERSAL</style>
+		</object>
+		<object class="mpWindow" name="ID_MATHPLOT_FATOR_FORMA" variable="mathPlotFatorForma" member="yes">
+			<pos>45,425</pos>
+			<size>360,200</size>
+			<style>wxBORDER_RAISED|wxTAB_TRAVERSAL</style>
+		</object>
+	</object>
+</wxsmith>

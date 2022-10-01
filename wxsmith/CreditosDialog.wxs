@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="CreditosDialog">
+		<title>Créditos</title>
+		<size>455,490</size>
+		<id_arg>0</id_arg>
+		<handler function="OnInit" entry="EVT_INIT_DIALOG" />
+		<object class="wxStaticBox" name="ID_STATICBOX_CREDITOS" variable="creditosStaticBox" member="yes">
+			<label>Desenvolvido em C++11 com a as bibliotecas de:</label>
+			<pos>8,8</pos>
+			<size>432,420</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP_CREDITOS" variable="creditorsStaticBitmap" member="yes">
+			<bitmap>./resource/creditos2.png</bitmap>
+			<pos>16,40</pos>
+			<size>417,378</size>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="fecharButton" member="yes">
+			<label>Fechar</label>
+			<pos>192,440</pos>
+			<size>83,32</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnfecharButtonClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

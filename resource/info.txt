@@ -1,0 +1,106 @@
+
+<center><h1>Informações</h1></center>
+
+<div align="justify">
+ <h2><font color="blue">1. Apresentação</font></h2>
+<p><font size="5">
+Este software se destina a visualização gráfica da trajetória de projetis. Ele implementa a <b>STANAG 4355</b> para projetis não guiados e giroscopicamente estabilizados, além de outros modelos balísticos mais simples. Possui propósitos de estudo, pesquisa e adestramento, sendo ofertado "como está" e sem garantias. Não use para tiro real!
+ </font></p>
+
+ <h2><font color="blue">2. Recursos</font></h2>
+<font size="5"><p>
+
+<p>Este programa realiza duas formas de cálculos balísticos:
+</p>
+<p><ul>
+<li><div  align="justify"><b>Cálculo Direto:</b> feitas as configurações e dada uma elevação, determina-se qual o alcance de um disparo feito com ela. Sempre traça uma trajetória, exceto para elevações maiores que 1.300''' usando-se o 4-DoF, quando esse modelo colapsa;<br /></div></li>
+<li><div  align="justify"><b>Cálculo Reverso:</b> feitas as configurações, dados o alcance desejado, o desnível do alvo e o tipo de trajetória (mergulhante ou vertical), retorna-se a elevação necessária para bater o tiro. O cálculo falha para alcances exagerados, desníveis além do possível e, no caso do 4-DoF, elevações muito grandes (> 1.300''').<br /></div></li>
+</ul></p>
+
+</p>
+
+
+ <center><img src="/resource/tela_principal.png" alt="print da tela principal"  height="430" width="670"> </center>
+
+<p>Não importando qual modo de cálculo esteja ativo, são disponibilizadas as seguintes funcionalidades em botões postos em primeiro plano:</p>
+<p><ul>
+<li><div  align="justify"><b>Calcular:</b> executa o cálculo de trajetória (direto ou reverso) e o exibe diversos gráficos distintos, um por ficha ;<br /></div></li>
+<li><div  align="justify"><b>Remover:</b> retira o último conjunto de gráficos traçado;<br /></div></li>
+<li><div  align="justify"><b>Limpar:</b> apaga todos os gráficos traçados;<br /></div></li>
+<li><div  align="justify"><b>Imprimir:</b> remete para impressão os gráficos cuja ficha estiver selecionada. Os detalhes da impressão são deixados a cargo do usuário.<br /></div></li>
+
+</ul></p>
+<p>Antes de se proceder a qualquer cálculo, deve-se realizar a devida configuração do programa.</p>
+</font>
+
+ <h2><font color="blue">3. Configurações</font></h2>
+
+ <center><img src="/resource/configuracoes.png" alt="print das configurações" > </center>
+<font size="5">
+<p>Dois tipos de configurações são abarcados neste software: as gerais e as técnicas.</p> </font>
+<h3>2.1 Gerais</h3>
+<font size="5">
+<p>Englobam as informações de natureza física necessárias para a execução do cálculo balístico, a saber:<br /></p>
+
+
+
+<ul>
+<li><div  align="justify"><b> Modelo</b>: o  conjunto de fórmulas de que são adotadas para descrever a trajetória do projetil. São disponibilizados os seguintes modelos balísticos:</p>
+<p>
+<ol type="I" >
+<li><div align="justify"><b>Vácuo:</b> mais simples, desprezando a resistência do ar e esfericidade do planeta. O tipo de projetil e de atmosfera escolhidos são irrelevantes para o cálculo da trajetória;<br /></div></li>
+<li><div align="justify"><b>Linear:</b> considera que a resistência do ar é proporcional à velocidade do projetil e já leva em conta a esfericidade do planeta;<br /> </div></li>
+<li><div align="justify"><b>3-DoF:</b> do inglês <i>Three Degrees of Freedom</i> ("Três Graus de Liberdade"), também conhecido como <i>Ponto-Massa</i>. Trata o projetil como uma partícula pontual e, mais realisticamente, já considera a resistência do ar como proporcional ao quadrado da velocidade. Possui boa precisão para elevações até 600''';<br /></div></li>
+<li><div align="justify"><b>4-DoF:</b> do inglês <i>Four Degrees of Freedom</i> ("Quatro Graus de Liberdade"), também conhecido como <i>Ponto-Massa Modificado</i>. Além das três dimensões espaciais,também trata o posicionamento do eixo principal do projetil com a trajetória (o quarto grau de liberdade). Já apresenta a derivação do projetil e, sem calibração (especificada na STANAG 4144), possui boa precisão para elevações até 600'''.<br /></div></li>.
+</ol>
+</p>
+
+ Por padrão, o software inicia com o modelo "Vácuo";</div></li><br />
+<li><div  align="justify"><b>Atmosfera:</b> os modelos para o decaimento da temperatura, pressão e densidade do ar conforme a altitude na troposfera: <br />
+
+<ol>
+<li><div  align="justify"><b>ICAO:</b> elaborado pela <i>International Civil Aviation Organization</i> (daí o nome) em 1962 e o mais utilizado para a elaboração de Tabelas Numéricas de Tiro dos materiais mais antigos. Adotado como padrão na inicialização do software;</div></li>
+<li><div  align="justify"><b>ISA:</b> a <i>International Standard Atmosphere</i> também foi elaborada pela ICAO, em 1976, sendo muito utilizada em aplicações não militares;</div></li>
+<li><div  align="justify"><b>US-Standard:</b> também conhecido como <i>Army Standard Metro</i>, este modelo foi muito utilizado até o advento da ICAO;</div></li>
+<li><div  align="justify"><b>Constante:</b> mantém os valores em nível do solo da atmosfera ICAO para temperatura, densidade e pressão ao longo de toda a trajetória não importando qual a altitude. Útil para tiros planos (elevações &lt;  90''') ou estudo;</div></li>
+</ol>
+ </div><br /></li>
+<li><div  align="justify"><b>Twist</b>: a taxa de torção do raiamento do tubo. Utilizado no modelo 4-DoF, tendo por valores típicos  18, 20 e 25 voltas/calibre;<br /></div></li>
+<li><div  align="justify"><b>Cd Linear</b>: o modelo balístico de arrasto linear foi calibrado para o tiro a velocidade inicial (Vo) de 302 m/s para o projetil 105mm (alc 3.500m) e 311 m/s para o 155mm (alc 5.000m). Para outros valores de velocidade inicial, foi disponibilizado este campo para a inserção de um coeficiente de arrasto (<i>drag coefficient</i>) "linearizado",  a fim de  permitir ao usuário a calibração para outros pares Vo/alcance. Para uma mesma Vo, é esperada uma imprecisão de 5 a 10% para os alcances mais afastados da calibração.<br /></div></li>
+
+
+<li><div  align="justify"><b>Curvatura e Rotação da Terra:</b> pequenos ajustes a serem feitos nos cálculo, que se tornam significativos em longas distâncias: <br />
+
+<ol>
+<li><div  align="justify"><b>Efeito da latitude sobre a gravidade:</b> devido ao fato de o planeta não ser uma esfera perfeita, porém um pouco mais largo no Equador que nos polos, a força gravitacional é mais ligeiramente forte no primeiro e mais fraca nos últimos. Foi estabelcida uma gravidade padrão a 45º de latitude e um fator de correção aplicado em disparos feitos sobre os demais paralelos, em todos os modelos balísiticos;<br /></div></li>
+
+<li><div  align="justify"><b>Aceleração de Coriolis:</b> em razão de o planeta girar em torno de seu eixo, além de o projetil se afastar dele durante sua trajetória, surgem "forças virtuais" que aceleram ou retardam o projetil - dependendo do ângulo lançamento  do disparo -, bem como o desviam lateralmente. Aplicada em todos os modelos, exceto o "Vácuo".</br>
+</div></li>
+
+</ol>
+
+</ul>
+</font>
+<h3>2.2 Técnicas</h3>
+ <center><img src="/resource/tecnicas.png" alt="print das configurações" > </center>
+<font size="5">
+
+<p>São  parâmetros matemáticos utilizados para resolver as equações balísticas:</p>
+
+<ul>
+<li><div  align="justify"><b>Passo: </b> intervalo de tempo utilizado na  integração numérica, utilizado em todos os modelo balísticos, exceto o "Vácuo";</div><br /></li>
+<li><div  align="justify"><b>Precisão: </b> utilizado no "Cálculo Reverso" como critério de parada, i.e., quando a diferença entre o alcance desejado e calculado é menor que a precisão, a rotina de cálculo se encerra.</div><br /></li>
+</ul>
+</font>
+<h2><font color="blue">4. Projetis</font></h2>
+ <center><img src="/resource/projetis.png" alt="print das configurações" > </center>
+<font size="5">
+<p>Dois projetis são oferecidos:<br /></p>
+<ol>
+<li>Pjt 105mm M1; <br /></li>
+<li>Pjt 155mm M107. <br /> </li>
+</ol>
+
+<p>Seus coeficientes aerodinâmicos foram obtidos do Software Spinner 73 e são exibidos graficamente por ocasião da seleção de cada tipo. Por padrão, o software inicia com o Pjt 105mm M1.< /p>
+</font>
+</div>

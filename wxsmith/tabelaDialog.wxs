@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="TabelaDialog">
+		<title>Tabulador</title>
+		<centered>1</centered>
+		<size>1030,560</size>
+		<id_arg>0</id_arg>
+		<handler function="OnClose" entry="EVT_CLOSE" />
+		<object class="wxTextCtrl" name="ID_TEXTO_TABELA" variable="textoTabela" member="yes">
+			<pos>32,56</pos>
+			<size>990,490</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_MULTILINE|wxTE_READONLY|wxHSCROLL</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_VELOCIDADE" variable="velocidadeStaticText" member="yes">
+			<label>Vo</label>
+			<pos>32,16</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_VELOCIDADE" variable="velocidadeTextCtrl" member="yes">
+			<value>0</value>
+			<pos>56,16</pos>
+			<size>80,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_UNIDADE_VELOCIDADE" variable="unidadeVelocidadeStaticText" member="yes">
+			<label>m/s</label>
+			<pos>136,16</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_INICIAR" variable="iniciarButton" member="yes">
+			<label>Iniciar</label>
+			<pos>400,16</pos>
+			<size>80,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnIniciarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_PARAR" variable="pararButton" member="yes">
+			<label>Parar</label>
+			<pos>496,16</pos>
+			<size>80,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnpararButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_TRAJETORIA" variable="trajetoriaStaticText" member="yes">
+			<label>Trajetoria</label>
+			<pos>176,16</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxChoice" name="ID_CHOICE_TRAJETORIA" variable="trajetoriaChoice" member="yes">
+			<content>
+				<item>Mergulhante</item>
+				<item>Vertical</item>
+			</content>
+			<selection>0</selection>
+			<pos>256,16</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_LIMPAR" variable="limparButton" member="yes">
+			<label>Limpar</label>
+			<pos>592,16</pos>
+			<size>80,31</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnLimparButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_EXPORTAR" variable="exportarButton" member="yes">
+			<label>Exportar</label>
+			<pos>688,16</pos>
+			<size>88,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnExportarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_PARAMETROS_BUTTON" variable="parametrosButton" member="yes">
+			<label>Parametros</label>
+			<pos>888,16</pos>
+			<size>99,31</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnparametrosButtonClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

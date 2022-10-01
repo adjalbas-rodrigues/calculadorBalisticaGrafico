@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ConfiguracoesGeraisDialog">
+		<title>Configurações</title>
+		<size>440,453</size>
+		<id_arg>0</id_arg>
+		<handler function="OnInit" entry="EVT_INIT_DIALOG" />
+		<object class="wxRadioBox" name="ID_RADIOBOX_MODELO" variable="radioBoxModelo" member="yes">
+			<label>Modelo</label>
+			<content>
+				<item>Vacuo</item>
+				<item>Arrasto Linear</item>
+				<item>Ponto-Massa (3-DoF)</item>
+				<item>Ponto-Massa Modificado (4-DoF)</item>
+				<item>Ponto-Massa Modificado (v. 1990)</item>
+			</content>
+			<default>-1</default>
+			<pos>8,16</pos>
+			<size>272,136</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<style>wxRA_SPECIFY_COLS</style>
+			<handler function="OnradioBoxModeloSelect" entry="EVT_RADIOBOX" />
+		</object>
+		<object class="wxRadioBox" name="ID_RADIOBOX_ATMOSFERA" variable="radioBoxAtmosfera" member="yes">
+			<label>Atmosfera</label>
+			<content>
+				<item>ICAO</item>
+				<item>ISA</item>
+				<item>US-Standard</item>
+				<item>Constante</item>
+			</content>
+			<default>-1</default>
+			<pos>296,16</pos>
+			<size>128,136</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxRA_SPECIFY_COLS</style>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_Salvar" variable="buttonSalvar" member="yes">
+			<label>Salvar</label>
+			<pos>80,401</pos>
+			<size>75,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnbuttonSalvarClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_Cancelar" variable="buttonCancelar" member="yes">
+			<label>Cancelar</label>
+			<pos>248,401</pos>
+			<size>75,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<handler function="OnbuttonCancelarClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_TWIST" variable="StaticTextTwist" member="yes">
+			<label>Twist:</label>
+			<pos>32,168</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_TWIST" variable="textCtrlTwist" member="yes">
+			<value>18</value>
+			<maxlength>2</maxlength>
+			<pos>80,168</pos>
+			<size>40,27</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+			<style>wxTE_CENTRE</style>
+			<handler function="OntextCtrlTwistText" entry="EVT_TEXT" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="staticTextTwist" member="yes">
+			<label>voltas/calibre</label>
+			<pos>128,168</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Sans</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DRAG_LINEAR" variable="staticTextDragLinear" member="yes">
+			<label>Cd linear</label>
+			<pos>296,168</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DRAG_LINEAR" variable="textCtrlDragLinear" member="yes">
+			<maxlength>4</maxlength>
+			<pos>368,168</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+			<handler function="OntextCtrlDragLinearText" entry="EVT_TEXT" />
+		</object>
+		<object class="wxStaticBox" name="ID_STATICBOX_CURVATURA" variable="curvaturaStaticBox" member="yes">
+			<label>Curvatura e rotacao da Terra</label>
+			<pos>8,233</pos>
+			<size>408,136</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxCheckBox" name="ID_CHECKBOX_FATORES_AJUSTE" variable="fatoresAjusteCheckBox" member="yes">
+			<label>Fatores de ajuste</label>
+			<pos>28,202</pos>
+			<size>160,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnfatoresAjusteCheckBoxClick" entry="EVT_CHECKBOX" />
+		</object>
+		<object class="wxCheckBox" name="ID_CHECKBOX_LATITUDE" variable="latitudeGravidadeCheckBox" member="yes">
+			<label>Efeito da latitude sobre a gravidade</label>
+			<pos>24,257</pos>
+			<size>280,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnlatitudeGravidadeCheckBoxClick" entry="EVT_CHECKBOX" />
+		</object>
+		<object class="wxCheckBox" name="ID_CHECKBOX_CORIOLIS" variable="coriolisCheckBox" member="yes">
+			<label>Aceleracao de Coriolis</label>
+			<pos>24,289</pos>
+			<size>192,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OncoriolisCheckBoxClick" entry="EVT_CHECKBOX" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_LATITUDE" variable="latitudeStaticText" member="yes">
+			<label>Latitude:</label>
+			<pos>24,329</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_LATITUDE" variable="latitudeTextCtrl" member="yes">
+			<value>45</value>
+			<maxlength>2</maxlength>
+			<pos>160,329</pos>
+			<size>32,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxChoice" name="ID_CHOICE" variable="hemisferioChoice" member="yes">
+			<content>
+				<item>Norte</item>
+				<item>Sul</item>
+			</content>
+			<selection>1</selection>
+			<pos>88,329</pos>
+			<size>64,26</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnhemisferioChoiceSelect" entry="EVT_CHOICE" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_UNIDADE_LATITUDE" variable="unidadeLatitudeStaticText" member="yes">
+			<label>º</label>
+			<pos>192,329</pos>
+			<size>16,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_LANCAMENTO" variable="lancamentoStaticText" member="yes">
+			<label>Lancamento:</label>
+			<pos>224,329</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_LANCAMENTO" variable="lancamentoTextCtrl" member="yes">
+			<value>0</value>
+			<maxlength>4</maxlength>
+			<pos>320,329</pos>
+			<size>48,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_UNIDADE_LANCAMENTO" variable="unidadeLancamentoStaticText" member="yes">
+			<label>&apos;&apos;&apos;</label>
+			<pos>376,329</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+	</object>
+</wxsmith>

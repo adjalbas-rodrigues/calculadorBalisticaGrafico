@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ParametrosEDialog">
+		<title>Parametros Tabela E</title>
+		<size>420,245</size>
+		<id_arg>0</id_arg>
+		<object class="wxStaticText" name="ID_STATICTEXT_TEMPERATURA01" variable="temperatura01StaticText" member="yes">
+			<label>Temperatura 01:</label>
+			<pos>24,56</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_TEMPERATURA01" variable="temperatura01TextCtrl" member="yes">
+			<maxlength>5</maxlength>
+			<pos>144,56</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_TEMPERATURA02" variable="temparatura02StaticText" member="yes">
+			<label>Temperatura 02:</label>
+			<pos>24,112</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_TEMPERATURA_02" variable="temperatura02TextCtrl" member="yes">
+			<maxlength>5</maxlength>
+			<pos>144,112</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face></face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEX_TEMPERATURA01_UNIDADE" variable="temperatura01UnidadeStaticText" member="yes">
+			<label>ºC</label>
+			<pos>208,56</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_TEMPERATURA02_UNIDADE" variable="temperatura02UnidadeStaticText" member="yes">
+			<label>ºC</label>
+			<pos>208,112</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DV0_01" variable="dvo01StaticText" member="yes">
+			<label>DVo:</label>
+			<pos>272,56</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DV0_01" variable="dvo01TextCtrl" member="yes">
+			<maxlength>5</maxlength>
+			<pos>312,56</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DV0_02" variable="dvo02StaticText" member="yes">
+			<label>m/s</label>
+			<pos>376,56</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DVO_02" variable="dvoStaticText" member="yes">
+			<label>DVo:</label>
+			<pos>272,112</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DVO_02" variable="dvo02TextCtrl" member="yes">
+			<maxlength>5</maxlength>
+			<pos>312,112</pos>
+			<size>56,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DVO_02_UNIDADE" variable="dvo02UnidadeStaticText" member="yes">
+			<label>m/s</label>
+			<pos>376,112</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON_SALVAR" variable="salvarButton" member="yes">
+			<label>Salvar</label>
+			<pos>88,192</pos>
+			<size>83,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnsalvarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON_CANCELAR" variable="cancelarButton" member="yes">
+			<label>Cancelar</label>
+			<pos>240,192</pos>
+			<size>83,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OncancelarButtonClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

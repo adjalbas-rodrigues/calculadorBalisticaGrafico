@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ParametrosFDialog">
+		<title>Parametros tabela F</title>
+		<centered>1</centered>
+		<size>426,289</size>
+		<id_arg>0</id_arg>
+		<object class="wxStaticBox" name="ID_STATICBOX_GARFO" variable="garfoStaticBox" member="yes">
+			<label>Garfo</label>
+			<pos>16,16</pos>
+			<size>376,152</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_FORM_FACTOR_PESO_PROJETIL" variable="formFactorPesoProjetilStaticText" member="yes">
+			<label>Form Factor Peso Projetil:</label>
+			<pos>40,184</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_FORM_FACTOR_PESO_PROJETIL" variable="formFactorPesoProjetilTextCtrl" member="yes">
+			<value>0</value>
+			<pos>232,184</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<style>wxTE_CENTRE</style>
+		</object>
+		<object class="wxButton" name="ID_SALVAR_BUTTON" variable="salvarButton" member="yes">
+			<label>Salvar</label>
+			<pos>80,232</pos>
+			<size>83,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnsalvarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_CANCELAR_BUTTON" variable="cancelarButton" member="yes">
+			<label>Cancelar</label>
+			<pos>248,232</pos>
+			<size>80,32</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OncancelarButtonClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ELEVACAO" variable="desvioProvavelEmElevacaoStaticText" member="yes">
+			<label>Desvio Provavel em Elevacao:</label>
+			<pos>64,48</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_ELEVACAO" variable="desvioProvavelEmElevacaoTextCtrl" member="yes">
+			<pos>280,48</pos>
+			<size>40,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="desvioProvavelElevacaoUnidadeStaticText" member="yes">
+			<label>&apos;&apos;&apos;</label>
+			<pos>320,48</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ARRASTO" variable="desvioProvavelEmArrastoStaticText" member="yes">
+			<label>Desvio Provavel em Arrasto:</label>
+			<pos>80,88</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_ARRASTO" variable="desvioProvavelEmArrastoTextCtrl" member="yes">
+			<pos>280,88</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_ARRASTO_UNIDADE" variable="desvioProvavelArrastoUnidadeStaticText" member="yes">
+			<label>%</label>
+			<pos>336,88</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_VELOCIDADE" variable="desvioProvavelEmVelocidadeStaticText" member="yes">
+			<label>Desvio Provavel em Velocidade:</label>
+			<pos>48,128</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL_DESVIO_PROVAVEL_VELOCIDADE" variable="desvioProvavelEmVelocidadeTextCtrl" member="yes">
+			<pos>280,128</pos>
+			<size>48,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT_DESVIO_PROVAVEL_VELOCIDADE_UNIDADE" variable="desvioProvavelVelociadeUnidadeStaticText" member="yes">
+			<label>m/s</label>
+			<pos>328,128</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+	</object>
+</wxsmith>

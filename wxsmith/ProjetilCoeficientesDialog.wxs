@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ProjetilCoeficientesDialog">
+		<title>Dados Projetil</title>
+		<size>646,445</size>
+		<id_arg>0</id_arg>
+		<object class="wxStaticBox" name="ID_STATICBOX_COEFICIENTES" variable="staticBoxCoeficientes" member="yes">
+			<label>Coeficientes Aerodinamicos</label>
+			<pos>8,96</pos>
+			<size>632,288</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_INFO_PROJETIL_TEXT" variable="infoProjetilText" member="yes">
+			<label>Label</label>
+			<pos>150,10</pos>
+			<size>350,80</size>
+			<bg>#FFFFFF</bg>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Arial</face>
+			</font>
+		</object>
+		<object class="wxNotebook" name="ID_NOTEBOOK_COEFICIENTES" variable="notebookCoeficientes" member="yes">
+			<pos>16,120</pos>
+			<size>616,264</size>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_DRAG" variable="mathPlotDrag" member="yes">
+					<pos>-147,-34</pos>
+					<size>616,238</size>
+				</object>
+				<label>Drag</label>
+			</object>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_DRAG_2" variable="mathPlotDrag2" member="yes">
+					<pos>314,8</pos>
+				</object>
+				<label>Drag2</label>
+			</object>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_LIFT" variable="mathPlotLift" member="yes">
+					<pos>256,12</pos>
+				</object>
+				<label>Lift</label>
+			</object>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_MAGNUS" variable="mathPlotMagnus" member="yes">
+					<pos>213,16</pos>
+				</object>
+				<label>Magnus</label>
+			</object>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_OVERTURNING_MOMENT" variable="mathPlotoverturningMoment" member="yes">
+					<pos>231,7</pos>
+				</object>
+				<label>Overturning</label>
+			</object>
+			<object class="notebookpage">
+				<object class="mpWindow" name="ID_MATHPLOT_SPIN_DAMPING" variable="mathPlotSpinDamping" member="yes">
+					<pos>265,5</pos>
+				</object>
+				<label>Spin</label>
+			</object>
+		</object>
+		<object class="wxButton" name="ID_FECHAR_BUTTON_PROJETIL_COEFICIENTESDIALOG" variable="buttonFechar" member="yes">
+			<label>Fechar</label>
+			<pos>272,392</pos>
+			<size>107,40</size>
+			<font>
+				<size>16</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+			</font>
+			<handler function="OnbuttonFecharClick" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>
