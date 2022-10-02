@@ -10,20 +10,20 @@ class Boletim {
 public:
     Boletim(char* id, char* nome, char* type);
     ~Boletim();
-    char* getId();
-    char* getName();
-    char* getType();
+    string getId();
+    string getName();
+    string getType();
     Boletim get();
-    char* addLine(char* line);
+    string addLine(char* line);
     char* addCabecalho(char* cabecalho);
-    vector<char*> getLines();
+    vector<string> getLines();
 protected:
 private:
-    char* id;
-    char* nome;
-    char* type;
+    string id;
+    string nome;
+    string type;
     vector<char*> cabecalho;
-    vector<char*> corpo;
+    vector<string> corpo;
 };
 class Boletins
 {
@@ -32,8 +32,8 @@ class Boletins
         static Boletins* getInstance();
         vector<Boletim*> getAll();
         //bool checkBoletimId(char* id);
-        Boletim* addBoletim(char* argv0, char* argv1, char* argv2);
-        Boletim* getBoletimById(char* id);
+        Boletim* addBoletim(char* id, char* name, char* type);
+        Boletim* getBoletimById(string id);
         void loadBD(string path);
 
 
