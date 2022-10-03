@@ -1,29 +1,47 @@
 #ifndef BOLETIMSTANAG4061DIALOG_H
 #define BOLETIMSTANAG4061DIALOG_H
 
+
 //(*Headers(boletimSTANAG4061Dialog)
 #include <wx/button.h>
+#include <wx/combobox.h>
 #include <wx/dialog.h>
 #include <wx/radiobox.h>
 #include <wx/sizer.h>
-#include <wx/spinctrl.h>
 #include <wx/textctrl.h>
 #include <wx/textdlg.h>
+
 //*)
+#include <vector>
+#include <iostream>
+#include <sstream>
+#include <cstring>
+#include <string>
+#include "boletins.h"
+
+using namespace std;
 
 class boletimSTANAG4061Dialog: public wxDialog
 {
 	public:
-
+        int select;
 		boletimSTANAG4061Dialog(wxWindow* parent);
-		void SetLines();
+		void SetLines(vector<string> lines);
+		void updateBoletim();
 		virtual ~boletimSTANAG4061Dialog();
+		Boletim* bol;
+		Boletim* newBoletim;
+
 
 		//(*Declarations(boletimSTANAG4061Dialog)
+        wxBoxSizer* BoxSizer1;
+        wxBoxSizer* BoxSizer2;
+        wxBoxSizer* BoxSizer5;
+        wxBoxSizer* BoxSizer6;
 		wxButton* Button1;
 		wxButton* Button3;
+		wxComboBox* ComboBox1;
 		wxRadioBox* RadioBox1;
-		wxSpinCtrl* SpinCtrl1;
 		wxTextCtrl* TextCtrl0A;
 		wxTextCtrl* TextCtrl0B;
 		wxTextCtrl* TextCtrl1A;
@@ -46,14 +64,15 @@ class boletimSTANAG4061Dialog: public wxDialog
 		wxTextCtrl* TextCtrlH1;
 		wxTextCtrl* TextCtrlH2;
 		wxTextCtrl* TextCtrlH3;
+		vector<wxTextCtrl*> Inputs;
 		wxTextEntryDialog* TextEntryDialog1;
 		//*)
 
 	protected:
 
 		//(*Identifiers(boletimSTANAG4061Dialog)
+		static const long ID_COMBOBOX1;
 		static const long ID_RADIOBOX1;
-		static const long ID_SPINCTRL1;
 		static const long ID_TEXTCTRLH0;
 		static const long ID_TEXTCTRLH1;
 		static const long ID_TEXTCTRH2;
@@ -92,6 +111,7 @@ class boletimSTANAG4061Dialog: public wxDialog
 		void OnLinhasCorpoChange(wxSpinEvent& event);
 		void OnLinhasCtrlChange(wxSpinEvent& event);
 		void OnRadioBox1Select1(wxCommandEvent& event);
+		void OnComboBox1Selected(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

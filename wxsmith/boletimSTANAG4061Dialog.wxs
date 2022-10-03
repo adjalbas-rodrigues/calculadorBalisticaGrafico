@@ -14,6 +14,26 @@
 			<object class="sizeritem">
 				<object class="wxBoxSizer" variable="BoxSizer6" member="no">
 					<object class="sizeritem">
+						<object class="wxStaticBoxSizer" variable="StaticBoxSizer3" member="no">
+							<label>Selecione</label>
+							<object class="sizeritem">
+								<object class="wxComboBox" name="ID_COMBOBOX1" variable="ComboBox1" member="yes">
+									<content>
+										<item>Novo...</item>
+									</content>
+									<selection>0</selection>
+									<handler function="OnComboBox1Selected" entry="EVT_COMBOBOX" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxALL|wxEXPAND</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
 						<object class="wxRadioBox" name="ID_RADIOBOX1" variable="RadioBox1" member="yes">
 							<label>STANAG</label>
 							<content>
@@ -24,24 +44,6 @@
 							<handler function="OnRadioBox1Select1" entry="EVT_RADIOBOX" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-						<border>5</border>
-						<option>1</option>
-					</object>
-					<object class="sizeritem">
-						<object class="wxStaticBoxSizer" variable="StaticBoxSizer3" member="no">
-							<label>Linhas Corpo</label>
-							<object class="sizeritem">
-								<object class="wxSpinCtrl" name="ID_SPINCTRL1" variable="SpinCtrl1" member="yes">
-									<value>9</value>
-									<max>50</max>
-									<handler function="OnLinhasCtrlChange" entry="EVT_SPINCTRL" />
-								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>1</option>
-							</object>
-						</object>
-						<flag>wxALL|wxEXPAND</flag>
 						<border>5</border>
 						<option>1</option>
 					</object>

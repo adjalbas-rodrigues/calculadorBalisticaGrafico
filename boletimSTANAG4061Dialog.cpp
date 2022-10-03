@@ -1,14 +1,15 @@
 #include "boletimSTANAG4061Dialog.h"
 #include <wx/msgdlg.h>
 
+
 //(*InternalHeaders(boletimSTANAG4061Dialog)
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
 
 //(*IdInit(boletimSTANAG4061Dialog)
+const long boletimSTANAG4061Dialog::ID_COMBOBOX1 = wxNewId();
 const long boletimSTANAG4061Dialog::ID_RADIOBOX1 = wxNewId();
-const long boletimSTANAG4061Dialog::ID_SPINCTRL1 = wxNewId();
 const long boletimSTANAG4061Dialog::ID_TEXTCTRLH0 = wxNewId();
 const long boletimSTANAG4061Dialog::ID_TEXTCTRLH1 = wxNewId();
 const long boletimSTANAG4061Dialog::ID_TEXTCTRH2 = wxNewId();
@@ -60,6 +61,15 @@ boletimSTANAG4061Dialog::boletimSTANAG4061Dialog(wxWindow* parent)
 	FlexGridBodySizer1 = new wxFlexGridSizer(16, 1, 5, 20);
 	FlexGridBodySizer1->AddGrowableRow(10);
 	BoxSizer6 = new wxBoxSizer(wxHORIZONTAL);
+	StaticBoxSizer3 = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Selecione"));
+	ComboBox1 = new wxComboBox(this, ID_COMBOBOX1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, 0, 0, wxDefaultValidator, _T("ID_COMBOBOX1"));
+	ComboBox1->SetSelection( ComboBox1->Append(_("Novo...")) );
+    for (auto i: Boletins::getInstance()->getAll()) {
+        string option = "[" + i->getId() + "] - " + i->getName();
+        ComboBox1->Append(_(option));
+	}
+	StaticBoxSizer3->Add(ComboBox1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BoxSizer6->Add(StaticBoxSizer3, 1, wxALL|wxEXPAND, 5);
 	wxString __wxRadioBoxChoices_1[2] =
 	{
 		_("4061   "),
@@ -68,11 +78,6 @@ boletimSTANAG4061Dialog::boletimSTANAG4061Dialog(wxWindow* parent)
 	RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("STANAG"), wxDefaultPosition, wxDefaultSize, 2, __wxRadioBoxChoices_1, 2, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
 	RadioBox1->SetSelection(0);
 	BoxSizer6->Add(RadioBox1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	StaticBoxSizer3 = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Linhas Corpo"));
-	SpinCtrl1 = new wxSpinCtrl(this, ID_SPINCTRL1, _T("9"), wxDefaultPosition, wxDefaultSize, 0, 0, 50, 9, _T("ID_SPINCTRL1"));
-	SpinCtrl1->SetValue(_T("9"));
-	StaticBoxSizer3->Add(SpinCtrl1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	BoxSizer6->Add(StaticBoxSizer3, 1, wxALL|wxEXPAND, 5);
 	FlexGridBodySizer1->Add(BoxSizer6, 1, wxALL|wxEXPAND, 5);
 	StaticBoxSizer1 = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Cabecalho"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
@@ -181,13 +186,35 @@ boletimSTANAG4061Dialog::boletimSTANAG4061Dialog(wxWindow* parent)
 	BoxSizer5->Add(Button3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridBodySizer1->Add(BoxSizer5, 1, wxALL|wxEXPAND, 5);
 	SetSizer(FlexGridBodySizer1);
-	TextEntryDialog1 = new wxTextEntryDialog(this, _("Identificador Boletim"), _("Nome"), wxEmptyString, wxOK|wxCANCEL|wxCENTRE|wxWS_EX_VALIDATE_RECURSIVELY, wxDefaultPosition);
+	TextEntryDialog1 = new wxTextEntryDialog(this, _("Nome Boletim"), _("Nome"), wxEmptyString, wxOK|wxCANCEL|wxCENTRE|wxWS_EX_VALIDATE_RECURSIVELY, wxDefaultPosition);
 	FlexGridBodySizer1->Fit(this);
 	FlexGridBodySizer1->SetSizeHints(this);
 	Center();
+	this->Inputs.push_back(TextCtrlH0);
+	this->Inputs.push_back(TextCtrlH1);
+	this->Inputs.push_back(TextCtrlH2);
+	this->Inputs.push_back(TextCtrlH3);
+	this->Inputs.push_back(TextCtrl0A);
+	this->Inputs.push_back(TextCtrl0B);
+	this->Inputs.push_back(TextCtrl1A);
+	this->Inputs.push_back(TextCtrl1B);
+	this->Inputs.push_back(TextCtrl2A);
+	this->Inputs.push_back(TextCtrl2B);
+	this->Inputs.push_back(TextCtrl3A);
+	this->Inputs.push_back(TextCtrl3B);
+	this->Inputs.push_back(TextCtrl4A);
+	this->Inputs.push_back(TextCtrl4B);
+	this->Inputs.push_back(TextCtrl5A);
+	this->Inputs.push_back(TextCtrl5B);
+	this->Inputs.push_back(TextCtrl6A);
+	this->Inputs.push_back(TextCtrl6B);
+	this->Inputs.push_back(TextCtrl7A);
+	this->Inputs.push_back(TextCtrl7B);
+	this->Inputs.push_back(TextCtrl8A);
+	this->Inputs.push_back(TextCtrl8B);
 
+	Connect(ID_COMBOBOX1,wxEVT_COMMAND_COMBOBOX_SELECTED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnComboBox1Selected);
 	Connect(ID_RADIOBOX1,wxEVT_COMMAND_RADIOBOX_SELECTED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnRadioBox1Select1);
-	Connect(ID_SPINCTRL1,wxEVT_COMMAND_SPINCTRL_UPDATED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnLinhasCtrlChange);
 	Connect(ID_TEXTCTRH2,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnTextCtrl3Text);
 	Connect(ID_TEXTCTRLH3,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnTextCtrl8Text);
 	Connect(ID_TEXTCTRL0B,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&boletimSTANAG4061Dialog::OnTextCtrl3Text);
@@ -202,6 +229,7 @@ boletimSTANAG4061Dialog::boletimSTANAG4061Dialog(wxWindow* parent)
 	//*)
 	//wxTextCtrl* TextCtrl0AB = ;
 	//wxMessageBox((char*)(LeftColumnBoxSizer->GetItemById(ID_TEXTCTRL0A)->GetId()));
+
 }
 
 boletimSTANAG4061Dialog::~boletimSTANAG4061Dialog()
@@ -218,11 +246,26 @@ void boletimSTANAG4061Dialog::OnTextCtrl3Text(wxCommandEvent& event)
 void boletimSTANAG4061Dialog::OnTextCtrl8Text(wxCommandEvent& event)
 {
 }
+void boletimSTANAG4061Dialog::updateBoletim(){
+        int j = 0;
+        vector<string> newLines;
+        for(auto i: Inputs) {
+            newLines.push_back((string)i->GetValue());
+        }
+        bol->updateLines(newLines);
+        string type = "4082";
+        if (RadioBox1->GetSelection() == 0) {
+            type = "4061";
+        }
+        bol->setType(type);
+}
 
 void boletimSTANAG4061Dialog::OnButton1Click(wxCommandEvent& event)
 {
-
-        TextEntryDialog1->Show();
+        this->updateBoletim();
+        Boletins::getInstance()->saveBoletim(bol);
+        Boletins::getInstance()->loadBD();
+        //TextEntryDialog1->Show();
         return;
 
 }
@@ -230,6 +273,7 @@ void boletimSTANAG4061Dialog::OnButton1Click(wxCommandEvent& event)
 void boletimSTANAG4061Dialog::OnRadioBox1Select(wxCommandEvent& event)
 {
     this->TextCtrl0A->SetValue(_("00000000"));
+    //TextCtrl0A->
 }
 
 void boletimSTANAG4061Dialog::OnSTANAGRadioBoxSelect(wxCommandEvent& event)
@@ -274,6 +318,35 @@ void boletimSTANAG4061Dialog::OnRadioBox1Select1(wxCommandEvent& event)
     this->TextCtrlH0->SetValue(_(event.GetString()));
 }
 
-void boletimSTANAG4061Dialog::SetLines(){
+void boletimSTANAG4061Dialog::SetLines(vector<string> lines){
+    int j = 0;
+    for(auto i : Inputs) {
+        i->SetValue(lines[j]);
+        j++;
+        if(j >= lines.size()) break;
+    }
     return;
+}
+
+void boletimSTANAG4061Dialog::TextEntryDialog1
+
+void boletimSTANAG4061Dialog::OnComboBox1Selected(wxCommandEvent& event)
+{
+    select = event.GetSelection()-1;
+    if (select > -1) {
+    bol = Boletins::getInstance()->getBoletimByPosition(select);
+    } else {
+        bol = new Boletim("0", "Novo", "4061");
+        TextEntryDialog1->Show();
+        wxMessageBox(TextEntryDialog1->GetValue());
+
+    }
+//    if (bol->getType() == "4061") {
+//        RadioBox1->SetSelection(0);
+//    } else {
+//        RadioBox1->SetSelection(1);
+//    }
+//    this->SetLines(bol->getLines());
+
+    //wxMessageBox(bol->getName());
 }

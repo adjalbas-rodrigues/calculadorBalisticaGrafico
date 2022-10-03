@@ -44,6 +44,7 @@ void initGlobais()
     projDAO =  ProjetilDAO::getInstance();
     config = Configuracao::getInstance();
     boletinsBD = Boletins::getInstance();
+    boletinsBD->loadBD();
 
     projetil.setTipo(tipoPjt);
     projDAO->geraProjetil(projetil);

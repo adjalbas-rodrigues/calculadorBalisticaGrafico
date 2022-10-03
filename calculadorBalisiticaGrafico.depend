@@ -16136,20 +16136,26 @@
 	"wx/window.h"
 	"wx/containr.h"
 
-1659361054 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletimstanag4061dialog.cpp
+1664790738 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletimstanag4061dialog.cpp
 	"boletimSTANAG4061Dialog.h"
 	<wx/msgdlg.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1659329046 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletimstanag4061dialog.h
+1664790271 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletimstanag4061dialog.h
 	<wx/button.h>
+	<wx/combobox.h>
 	<wx/dialog.h>
 	<wx/radiobox.h>
 	<wx/sizer.h>
-	<wx/spinctrl.h>
 	<wx/textctrl.h>
 	<wx/textdlg.h>
+	<vector>
+	<iostream>
+	<sstream>
+	<cstring>
+	<string>
+	"boletins.h"
 
 1587560968 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\wxmsw-3.0.5_gcc810_x64_dev\include\wx\button.h
 	"wx/defs.h"
@@ -17946,7 +17952,7 @@
 
 1587560968 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\wxmsw-3.0.5_gcc810_x64_dev\include\wx\os2\msgdlg.h
 
-1664676143 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletins.cpp
+1664790319 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletins.cpp
 	"boletins.h"
 	<vector>
 	<algorithm>
@@ -17960,7 +17966,7 @@
 	<wx/aboutdlg.h>
 	<wx/valnum.h>
 
-1664676152 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletins.h
+1664790333 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\boletins.h
 	<vector>
 	<iostream>
 	<sstream>
@@ -18977,7 +18983,7 @@
 	<string>
 	<projetil/projetil.h>
 
-1664437303 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\calculadorbalisiticagraficomain.cpp
+1664678387 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\calculadorbalisiticagraficomain.cpp
 	"boletins.h"
 	"calculadorBalisiticaGraficoMain.h"
 	"globais.h"
@@ -19418,7 +19424,7 @@
 
 1632748880 c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\calculadornumerico\fatoresdeajuste\deletafator.h
 
-1664433845 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\globais.cpp
+1664778618 source:c:\users\adjalbas rodrigues\desktop\ballistickernelcpp3\ballistickernelcpp\interfacegrafica\calculadorbalisiticagraficowindows\globais.cpp
 	<sstream>
 	<iostream>
 	<iomanip>

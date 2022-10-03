@@ -1337,7 +1337,7 @@ void calculadorBalisiticaGraficoFrame::OnramoChoiceSelect(wxCommandEvent& event)
 void calculadorBalisiticaGraficoFrame::OnmenuBoletimSTANAG4061Selected(wxCommandEvent& event)
 {
     boletimSTANAG4061Dialog *BoletimSTANAG4061Dialog = new boletimSTANAG4061Dialog(this);
-    //wxMessageBox(_("Banco de Dados carregado com sucesso!"));
+    wxMessageBox(_("Banco de Dados carregado com sucesso!"));
     BoletimSTANAG4061Dialog->Show();
 }
 
